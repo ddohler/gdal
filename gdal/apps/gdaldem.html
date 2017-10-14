@@ -465,7 +465,22 @@ l 3.22351,0.27142 -0.37384,2.51081 -10.8575,0 z" inkscape:connector-curvature="0
 
 <div class="spinner" id='spinner'></div>
 <div class="emscripten" id="status">Downloading...</div>
-
+<div class="instructions">
+  <h1>gdaldem Demo</h1>
+  <h2>Instructions</h2>
+  <p>Choose a GeoTIFF file from your computer and then click "Go!".
+     If you don't have a GeoTIFF handy, you can download
+     <a href="https://s3.amazonaws.com/ddohler/gdal-js/24001330PAS_dem.tif">this one</a>.
+     All operations are performed client-side.
+     On my machine, the file link above, which is about 40MB, takes about 8 seconds to process; there's no progress indicator yet, unfortunately.
+     The demo GeoTIFF is from the <a href="http://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=1247">DCNR PAMAP DEM data set</a>.
+  </p>
+  <h2>Warning</h2>
+  <p>The way this is currently set up, any file you choose will be fully loaded into your browser's memory,
+    even if GDAL itself doesn't need to read the whole file. You should probably avoid loading extremely
+    large files.
+  </p>
+</div>
 <span id='controls'>
   <input type="file" id="inputFileSelector">
   <button onclick="goGoGdal()">Go!</button>
@@ -478,7 +493,7 @@ l 3.22351,0.27142 -0.37384,2.51081 -10.8575,0 z" inkscape:connector-curvature="0
 </div>
 
 
-<div class="emscripten_border">
+<div>
   <img id="outputDisplay">
 </div>
 <textarea id="output" rows="8"></textarea>
